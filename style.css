@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  margin:0; padding:40px;
+  font-family:'Poppins', sans-serif;
+  color:white;
+  overflow-x:hidden;
+}
+
+.bg {
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center, #4e007b, #0a0014);
+  z-index:-3;
+}
+
+.scanlines {
+  position:fixed;
+  inset:0;
+  background:linear-gradient(rgba(255,0,255,0.1) 2px, transparent 2px);
+  background-size:100% 6px;
+  opacity:0.15;
+  animation:scan 8s linear infinite;
+  z-index:-2;
+}
+
+@keyframes scan {
+  0% { transform:translateY(-100%); }
+  100% { transform:translateY(100%); }
+}
+
+.title {
+  font-size:32px;
+  margin-bottom:20px;
+  text-shadow:0 0 15px #ff4cff, 0 0 30px #ff4cff;
+}
+
+.add-btn {
+  background:#ff4cff33;
+  border:1px solid #ff4cff88;
+  padding:10px 18px;
+  border-radius:8px;
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(4px);
+  margin-bottom:20px;
+  transition:0.2s;
+}
+.add-btn:hover {
+  background:#ff4cff55;
+}
+
+.grid {
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+}
+
+.card {
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid #ffffff22;
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 20px #ff4cff33;
+  cursor:grab;
+  transition:0.2s;
+}
+.card:hover {
+  box-shadow:0 0 25px #ff4cff55;
+}
+.card.dragging {
+  opacity:0.4;
+}

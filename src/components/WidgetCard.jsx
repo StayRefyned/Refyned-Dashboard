@@ -1,1 +1,0 @@
-export function WidgetCard({title,children}){return(<div className='p-4 bg-white/3 border border-white/6 rounded-lg min-h-[120px]'><div className='text-sm font-medium mb-2'>{title}</div><div className='text-xs text-white/70'>{children}</div></div>);}
